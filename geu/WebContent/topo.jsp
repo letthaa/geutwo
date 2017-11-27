@@ -45,6 +45,10 @@
 						<li><a href="/geu/espacos">Listar</a></li>
 						<li><a href="/geu/espacos?q=new">Novo</a></li>
 					</ul></li>
+				<li class="nav-item"><a class="nav-link" href="login.jsp">Login</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="registro.jsp">Registro</a>
+				</li>
 			</ul>
 		</div>
 		<!--/.nav-collapse -->

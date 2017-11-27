@@ -23,8 +23,8 @@
 		<form action="blocos" method="post">
 			Nome:<input type="text" name="nome" /><br> Letra:<input
 				type="text" name="letra" /><br> Latitude:<input type="text"
-				name="latitude" /><br> Longitude:<input type="text" name="longitude" /><br>
-			<input type="submit" value="Salvar" />
+				name="latitude" /><br> Longitude:<input type="text"
+				name="longitude" /><br> <input type="submit" value="Salvar" />
 
 		</form>
 	</div>
