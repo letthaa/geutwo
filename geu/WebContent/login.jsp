@@ -17,7 +17,7 @@
 
 <body>
 	<c:import url="topo.jsp"></c:import>
-	<div class="container">
+	<div class="container" align="center">
 
 		<div class="page-header">
 			<h1>Página de Login</h1>

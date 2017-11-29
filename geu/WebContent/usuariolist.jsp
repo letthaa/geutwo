@@ -1,4 +1,3 @@
-<%@ taglib tagdir="/WEB-INF/tags" prefix="u"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html >
 <html>
@@ -17,21 +16,24 @@
 
 <body>
 	<c:import url="topo.jsp"></c:import>
-	<div class="container" align="center">
+	<div class="container">
 
 		<div class="page-header">
-			<h1>Página de Registro</h1>
+			<h1>Lista de Usuarios</h1>
 		</div>
+		<table class="table">
+			<tr>
+				<th>Nome</th>
+				<th>Login</th>
+			</tr>
 
-		<form action="registro" method="post">
-			Nome: <input name="nome" type="text" required><br>
-			Login: <input name="login" type="text" required><br>
-			Senha: <input name="senha" type="password" required><br>
-			<br>
-			<button type="submit">Registrar</button>
-		</form>
-
-
+			<c:forEach var="e" items="${listaUsuarios}">
+				<tr>
+					<td>${e.nome}</td>
+					<td>${e.login}</td>
+				<tr>
+			</c:forEach>
+		</table>
 	</div>
 
 	<c:import url="rodape.jsp"></c:import>

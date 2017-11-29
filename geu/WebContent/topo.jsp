@@ -49,6 +49,25 @@
 				</li>
 				<li class="nav-item"><a class="nav-link" href="registro.jsp">Registro</a>
 				</li>
+
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">Login <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li>
+							<form action="login" method="post">
+								Login: <input name="login" type="text" required><br>
+								Senha: <input name="senha" type="password" required><br>
+								<br>
+								<button type="submit">Entrar</button>
+							</form>
+						</li>
+					</ul> <!-- 			<form action="login" method="post">
+			Login: <input name="login" type="text" required><br>
+			Senha: <input name="senha" type="password" required><br>
+			<br>
+			<button type="submit">Entrar</button>
+		</form> -->
 			</ul>
 		</div>
 		<!--/.nav-collapse -->

@@ -16,46 +16,49 @@ import br.ucsal.geu.model.Usuario;
 /**
  * Servlet implementation class LoginController
  */
-@WebServlet("/LoginController")
+@WebServlet("/login")
 public class LoginController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private UsuarioDAO u = new UsuarioDAO();
+    private UsuarioDAO u = new UsuarioDAO();
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+     *      response)
+     */
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		Usuario user = new Usuario();
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     *      response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	    throws ServletException, IOException {
+	Usuario user = new Usuario();
 
-		String login = request.getParameter("login");
-		String senha = request.getParameter("senha");
+	String login = request.getParameter("login");
+	String senha = request.getParameter("senha");
 
-		user.setLogin(login);
-		user.setSenha(senha);
+	user.setLogin(login);
+	user.setSenha(senha);
 
-		if (!u.Autenticar(user)) {
-			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-			request.setAttribute("erro", "Usuario e/ou senha incorretas.");
-			rd.include(request, response);
-		} else {
-			HttpSession session = request.getSession();
-			session.setAttribute("player", user);
-			// setting session to expire in 30 mins
-			session.setMaxInactiveInterval(30 * 60);
-			response.sendRedirect("index.jsp");
-		}
-	}
+	HttpSession session = request.getSession();
+	session.setAttribute("player", user);
+	response.sendRedirect("index.jsp");
+	// if (!u.Autenticar(user)) {
+	// RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+	// request.setAttribute("erro", "Usuario e/ou senha incorretas.");
+	// rd.include(request, response);
+	// } else {
+	// HttpSession session = request.getSession();
+	// session.setAttribute("player", user);
+	// // setting session to expire in 30 mins
+	// session.setMaxInactiveInterval(30 * 60);
+	// response.sendRedirect("index.jsp");
+	// }
+    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.getRequestDispatcher("login.jsp").forward(request, response);
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	    throws ServletException, IOException {
+	request.getRequestDispatcher("index.jsp").forward(request, response);
+    }
 }
